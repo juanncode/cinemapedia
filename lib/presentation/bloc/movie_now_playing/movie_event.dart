@@ -8,6 +8,5 @@ abstract class MovieEvent extends Equatable {
 }
 
 class LoadNextPageEvent extends MovieEvent {
-  final int currentPage;
-  const LoadNextPageEvent(this.currentPage);
+  const LoadNextPageEvent();
 }

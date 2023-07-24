@@ -17,7 +17,13 @@ class MovieBloc extends Bloc<MovieEvent, MovieState> {
     LoadNextPageEvent event,
     Emitter<MovieState> emit,
   ) async {
-    final response = await moviesRepository.getNowPlaying(page: event.currentPage);
-    emit(state.copyWith(isLoading: false, movies: [...state.movies, ...response]));
+    if (state.isLoadingMovies) return;
+    emit(state.copyWith(isLoadingMovies: true));
+    final response = await moviesRepository.getNowPlaying(page: state.currentPage + 1);
+    final newMovies = [...state.movies, ...response];
+    print('length movies ${newMovies.length}');
+
+    emit(state.copyWith(
+        isLoadingMovies: false, isLoading: false, movies: newMovies, currentPage: state.currentPage + 1));
   }
 }
