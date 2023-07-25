@@ -14,7 +14,9 @@ class MovieMapper {
         originalTitle: movieDb.originalTitle,
         overview: movieDb.overview,
         popularity: movieDb.popularity,
-        posterPath: (movieDb.posterPath != '') ? 'https://image.tmdb.org/t/p/w500/${movieDb.posterPath}' : 'no-poster',
+        posterPath: (movieDb.posterPath != '')
+            ? 'https://image.tmdb.org/t/p/w500/${movieDb.posterPath}'
+            : 'https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg',
         releaseDate: movieDb.releaseDate,
         title: movieDb.title,
         video: movieDb.video,

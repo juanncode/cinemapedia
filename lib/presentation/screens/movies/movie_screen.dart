@@ -5,7 +5,6 @@ import 'package:cinemapedia/presentation/bloc/movie_cache/movie_cache_cubit.dart
 import 'package:cinemapedia/presentation/screens/movies/actor_movie.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
 
 class MovieScreen extends StatefulWidget {
   static const name = 'movie-screen';

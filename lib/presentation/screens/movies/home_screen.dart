@@ -1,10 +1,6 @@
-import 'package:cinemapedia/domain/datasources/actors_datasource.dart';
 import 'package:cinemapedia/domain/entities/movie.dart';
-import 'package:cinemapedia/infrastructure/datasources/actor_moviedb_datasource.dart';
 import 'package:cinemapedia/infrastructure/datasources/moviedb_datasource.dart';
-import 'package:cinemapedia/infrastructure/repositories/actor_repository_impl.dart';
 import 'package:cinemapedia/infrastructure/repositories/movie_repository_impl.dart';
-import 'package:cinemapedia/presentation/bloc/actors/actors_bloc.dart';
 import 'package:cinemapedia/presentation/bloc/movie_now_playing/movie_bloc.dart';
 import 'package:cinemapedia/presentation/bloc/movie_popular/popular_bloc.dart';
 import 'package:cinemapedia/presentation/bloc/movie_upcoming/upcoming_bloc.dart';

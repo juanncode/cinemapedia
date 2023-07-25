@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:cinemapedia/config/helpers/human_formats.dart';
 import 'package:cinemapedia/domain/entities/movie.dart';
 import 'package:cinemapedia/presentation/widgets/animations/face_out_left.dart';
@@ -69,12 +67,6 @@ class _Slide extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final decoration = BoxDecoration(
-      borderRadius: BorderRadius.circular(20),
-      boxShadow: const [
-        BoxShadow(color: Colors.black45, blurRadius: 10, offset: Offset(0, 10)),
-      ],
-    );
     final textStyle = Theme.of(context).textTheme;
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 8),

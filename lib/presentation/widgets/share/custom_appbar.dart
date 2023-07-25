@@ -1,4 +1,9 @@
+import 'package:cinemapedia/domain/entities/movie.dart';
+import 'package:cinemapedia/presentation/bloc/search/search_bloc.dart';
+import 'package:cinemapedia/presentation/delegates/search_movie_delegate.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({super.key});
@@ -24,7 +29,18 @@ class CustomAppBar extends StatelessWidget {
                 const SizedBox(width: 5),
                 Text('Cinemapedia', style: titleStyle),
                 const Spacer(),
-                IconButton(onPressed: () {}, icon: Icon(Icons.search))
+                IconButton(
+                    onPressed: () {
+                      showSearch<Movie?>(
+                              query: context.read<SearchBloc>().state.query,
+                              context: context,
+                              delegate: SearchMovieDelegate())
+                          .then((movie) {
+                        if (movie == null) return;
+                        context.push('/movie/${movie.id}');
+                      });
+                    },
+                    icon: const Icon(Icons.search))
               ],
             ),
           ),
